@@ -12,12 +12,7 @@ namespace BinaryAddition
     {
         public string AddBinary(int a, int b)
         {
-            string strA = string.Empty;
-            string strB = string.Empty;
-            strA = a != 0 ? "1" : "0";
-            strB = b != 0 ? "1" : "0";
-            return strA + strB;
-           
+            return Convert.ToString(a+b,2);
         }
     }
 
@@ -46,7 +41,7 @@ namespace BinaryAddition
 
             //act
             result = kata.AddBinary(0, 0);
-            expected = "00";
+            expected = "0";
             actual = result;
 
             //assert
@@ -54,13 +49,13 @@ namespace BinaryAddition
         }
 
         [Test]
-        public void Input_01_ShouldBe_01()
+        public void Input_01_ShouldBe_00()
         {
             //arrange
 
             //act
             result = kata.AddBinary(0, 1);
-            expected = "01";
+            expected = "1";
             actual = result;
 
             //assert
@@ -68,17 +63,46 @@ namespace BinaryAddition
         }
 
         [Test]
-        public void Input_23_ShouldBe_11()
+        public void Input_23_ShouldBe_101()
         {
             //arrange
 
             //act
             result = kata.AddBinary(2, 3);
-            expected = "11";
+            expected = "101";
             actual = result;
 
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void Input_10n3_ShouldBe_1101()
+        {
+            //arrange
+
+            //act
+            result = kata.AddBinary(10, 3);
+            expected = "1101";
+            actual = result;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Input_f10n3_ShouldBe_11111111111111111111111111111001()
+        {
+            //arrange
+
+            //act
+            result = kata.AddBinary(-10, 3);
+            expected = "11111111111111111111111111111001";
+            actual = result;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
