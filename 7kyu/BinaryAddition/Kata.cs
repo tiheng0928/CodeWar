@@ -14,14 +14,8 @@ namespace BinaryAddition
         {
             string strA = string.Empty;
             string strB = string.Empty;
-            if (a != 0)
-                strA = "1";
-            else
-                strA = "0";
-            if (b != 0)
-                strB = "1";
-            else
-                strB = "0";
+            strA = a != 0 ? "1" : "0";
+            strB = b != 0 ? "1" : "0";
             return strA + strB;
            
         }
