@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace BinaryAddition
 {
@@ -56,6 +57,22 @@ namespace BinaryAddition
             //act
             result = kata.AddBinary(0, 1);
             string expected = "01";
+            string actual = result;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Input_23_ShouldBe_11()
+        {
+            //arrage 
+            var kata = new Kata();
+            string result = string.Empty;
+
+            //act
+            result = kata.AddBinary(2, 3);
+            string expected = "11";
             string actual = result;
 
             //assert
