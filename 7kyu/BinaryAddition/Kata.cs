@@ -30,18 +30,30 @@ namespace BinaryAddition
     [TestFixture]
     public class BinaryAdditionTest
     {
+        Kata kata;
+        string result = string.Empty;
+        string expected = string.Empty;
+        string actual = string.Empty;
+
+
+        [SetUp]
+        public void SetUp()
+        {
+            kata = new Kata();
+            result = string.Empty;
+            expected = string.Empty;
+            actual = string.Empty;
+        }
+
         [Test]
         public void Input_00_ShouldBe_00()
         {
             //arrange
-            var kata = new Kata();
-            string result = string.Empty;
-            
 
             //act
             result = kata.AddBinary(0, 0);
-            string expected = "00";
-            string actual = result;
+            expected = "00";
+            actual = result;
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -51,13 +63,11 @@ namespace BinaryAddition
         public void Input_01_ShouldBe_01()
         {
             //arrange
-            var kata = new Kata();
-            string result = string.Empty;
 
             //act
             result = kata.AddBinary(0, 1);
-            string expected = "01";
-            string actual = result;
+            expected = "01";
+            actual = result;
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -66,14 +76,12 @@ namespace BinaryAddition
         [Test]
         public void Input_23_ShouldBe_11()
         {
-            //arrage 
-            var kata = new Kata();
-            string result = string.Empty;
+            //arrange
 
             //act
             result = kata.AddBinary(2, 3);
-            string expected = "11";
-            string actual = result;
+            expected = "11";
+            actual = result;
 
             //assert
             Assert.AreEqual(expected, actual);
