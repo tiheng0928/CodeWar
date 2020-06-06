@@ -18,12 +18,17 @@ namespace DescendingOrder
             else
             {
                 int count = InputStr.Length;
-                var numchar = string.Empty;
-                for(int i = count; i > 0; i--)
+                string[] numchars = new string[count];
+                for(int i = 0; i < count; i++)
                 {
-                    numchar += InputStr.Substring(i - 1, 1);
+
+                    var numchar = InputStr.Substring(i, 1);
+                    numchars[i] = numchar;
+
                 }
-                result = int.Parse(numchar);
+                numchars = numchars.OrderByDescending(o => o).ToArray();
+                var resultStr = string.Join("", numchars);
+                result = int.Parse(resultStr);
             }
 
             return result;
@@ -80,6 +85,33 @@ namespace DescendingOrder
             result = kata.DescendingOrder(1234);
             //act
             expected = 4321;
+            actual = result;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Input_1021_should_be_1201()
+        {
+            //arrange
+            result = kata.DescendingOrder(1021);
+            //act
+            expected = 2110;
+            actual = result;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Input_13252_should_be_53221()
+        {
+            //arrange
+            result = kata.DescendingOrder(13252);
+            
+            //act
+            expected = 53221;
             actual = result;
 
             //assert
