@@ -11,27 +11,30 @@ namespace DescendingOrder
     {
         public int DescendingOrder(int num)
         {
-            string InputStr = num.ToString();
-            int result;
-            if (InputStr.Length <= 1)
-                result = num;
-            else
-            {
-                int count = InputStr.Length;
-                string[] numchars = new string[count];
-                for(int i = 0; i < count; i++)
-                {
+            //string InputStr = num.ToString();
+            //int result;
+            //if (InputStr.Length <= 1)
+            //    result = num;
+            //else
+            //{
+            //    int count = InputStr.Length;
+            //    string[] numchars = new string[count];
+            //    for(int i = 0; i < count; i++)
+            //    {
 
-                    var numchar = InputStr.Substring(i, 1);
-                    numchars[i] = numchar;
+            //        var numchar = InputStr.Substring(i, 1);
+            //        numchars[i] = numchar;
 
-                }
-                numchars = numchars.OrderByDescending(o => o).ToArray();
-                var resultStr = string.Join("", numchars);
-                result = int.Parse(resultStr);
-            }
+            //    }
+            //    numchars = numchars.OrderByDescending(o => o).ToArray();
+            //    var resultStr = string.Join("", numchars);
+            //    result = int.Parse(resultStr);
+            //}
 
-            return result;
+            //return result;
+
+            return int.Parse(string.Concat(num.ToString().OrderByDescending(o => o)));
+
         }
     }
 
