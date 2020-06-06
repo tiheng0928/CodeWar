@@ -9,7 +9,7 @@ namespace DescendingOrder
 {
     public class Kata
     {
-        public static int DescendingOrder(int num)
+        public int DescendingOrder(int num)
         {
             string InputStr = num.ToString();
             int result;
@@ -33,14 +33,28 @@ namespace DescendingOrder
     [TestFixture]
     public class DescendingOrder_Test
     {
+        private Kata kata;
+        private int result;
+        private int expected;
+        private int actual;
+
+        [SetUp]
+        public void Setup()
+        {
+            kata = new Kata();
+            result = 0;
+            expected = 0;
+            actual = 0;
+        }
+
         [Test]
         public void Input_0_should_be_0()
         {
             //arrange
-            var result = Kata.DescendingOrder(0);
+            result = kata.DescendingOrder(0);
             //act
-            var expected = 0;
-            var actual = result;
+            expected = 0;
+            actual = result;
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -50,10 +64,23 @@ namespace DescendingOrder
         public void Input_12_should_be_21()
         {
             //arrange
-            var result = Kata.DescendingOrder(12);
+            result = kata.DescendingOrder(12);
             //act
-            var expected = 21;
-            var actual = result;
+            expected = 21;
+            actual = result;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Input_1234_should_be_4321()
+        {
+            //arrange
+            result = kata.DescendingOrder(1234);
+            //act
+            expected = 4321;
+            actual = result;
 
             //assert
             Assert.AreEqual(expected, actual);
