@@ -33,6 +33,21 @@ namespace ArrayDiff
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void Input_0n1n2n3_and_0n2_shouldbe_1n3()
+        {
+            //arrange
+            var kata = new Kata();
+            int[] expected;
+            int[] actual;
+            //act
+            actual = kata.ArrayDiff(new int[] { 0,1,2,3 }, new int[] { 0,2 });
+            expected = new int[] { 1,3 };
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
     
 
