@@ -58,6 +58,19 @@ namespace ArrayDiff
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void Input_12n14n3n6n9_and_0n9n13n6_shouldbe_12n14n3()
+        {
+            //arrange
+            inputA = new int[] { 12,14,3,6,9 };
+            inputB = new int[] { 0,9,13,6 };
+            //act
+            actual = kata.ArrayDiff(inputA, inputB);
+            expected = new int[] { 3,12,14 };
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
     
 
