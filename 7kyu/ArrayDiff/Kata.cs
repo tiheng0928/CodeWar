@@ -12,7 +12,7 @@ namespace ArrayDiff
     {
         public int[] ArrayDiff(int[] A, int[] B)
         {
-            return A.Where(o => B.Contains(o) == false).Select(o => o).ToArray();
+            return A.Where(o => !B.Contains(o)).ToArray();
         }
     }
 
